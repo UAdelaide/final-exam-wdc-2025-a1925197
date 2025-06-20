@@ -112,13 +112,9 @@
         async function loadDogs()
         {
           const res = await fetch('/api/dogs/mydogs');
-
-          const result = await res.json();
-
+          const result = await res.json()
           if (!res.ok) throw new Error(result.error || 'Error loading user dogs data');
-
           console.log(dogs);
-
           this.dogs = result;
 
         }
