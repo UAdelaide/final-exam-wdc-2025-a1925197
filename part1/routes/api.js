@@ -5,4 +5,12 @@ router.get('/dogs', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/walkrequests/open', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+router.get('/dogs', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
 module.exports = router;
