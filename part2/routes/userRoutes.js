@@ -35,8 +35,10 @@ function authenticate(req, res, next) {
   {
     next();
   }
-
-  
+  else
+  {
+    res.status(401);
+  }
 }
 
 router.get('/me', (req, res) => {
