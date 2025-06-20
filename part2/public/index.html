@@ -84,10 +84,11 @@
           const response = await fetch("/api/dogs");
           const data = await response.json();
 
-          const dogImageData = await data.map(async (dog) => {
+          // get all of the dog image urls
+          const dogImageData = await Promise.all(data.map(async (dog) => {
             const image = this.getDogImage();
             return { ... dog, image };
-          });
+          }));
 
           this.allDogs = dogImageData;
         },
