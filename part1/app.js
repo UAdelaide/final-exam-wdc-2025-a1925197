@@ -131,6 +131,10 @@ await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_min
 
 await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-05-20 09:00:00' , 60, 'Beachside Ave', 'completed');`);
 
+
+await db.execute(`INSERT INTO WalkRatings ()`)
+
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
