@@ -14,7 +14,7 @@ app.use(session({
     secret: "SuperSecretStringThatNoOneWillGuess",
     cookie: {
         httpOnly: true,
-        maxA
+        maxAge: 1000 * 60 * 60,
     }
 }));
 
