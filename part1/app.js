@@ -58,7 +58,7 @@ await db.execute(`
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
 );`);
 
-    await db.execute(`~
+await db.execute(`
 CREATE TABLE WalkRequests (
     request_id INT AUTO_INCREMENT PRIMARY KEY,
     dog_id INT NOT NULL,
@@ -68,8 +68,9 @@ CREATE TABLE WalkRequests (
     status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-);
+);`);
 
+await db.execute(`
 CREATE TABLE WalkApplications (
     application_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
@@ -79,7 +80,7 @@ CREATE TABLE WalkApplications (
     FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
     FOREIGN KEY (walker_id) REFERENCES Users(user_id),
     CONSTRAINT unique_application UNIQUE (request_id, walker_id)
-);
+);`);
 
 CREATE TABLE WalkRatings (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
