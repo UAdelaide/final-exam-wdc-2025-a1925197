@@ -93,8 +93,11 @@ router.get("logout", authenticate, async (req, res) => {
   // Destory the session, callback for error handling and returning
   req.session.destroy((error) => {
     if(error) {
+      console.error(error);
       return res.status(500).json({ error: "Error while logging out" });
     }
+
+    //
 
     // The default name of the cookie created by express-session
     res.clearCookie("connect.sid");
