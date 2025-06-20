@@ -159,7 +159,10 @@ SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.o
 app.get('/api/walkrequests/open', async function(req, res, next) {
      try {
     const [requests] = await db.execute(`
-SELECT WalkApplications.request_id, Dogs.name, Dogs.size, Users.username FROM WalkApplications INNER JOIN Users ON Dogs.owner_id = Users.user_id;
+SELECT WalkApplications.request_id, Dogs.name, Dogs.size, Users.username
+FROM WalkApplications
+INNER JOIN Dogs ON WalkApplications.owner_id = Users.user_id;
+INNER JOIN Users ON Dogs.owner_id = Users.user_id;
         `);
     res.json(requests);
   } catch (err) {
