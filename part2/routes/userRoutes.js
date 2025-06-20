@@ -97,10 +97,11 @@ router.get("logout", authenticate, async (req, res) => {
       return res.status(500).json({ error: "Error while logging out" });
     }
 
-    //
+    // If everything was fine we clear the cookie and return
 
     // The default name of the cookie created by express-session
     res.clearCookie("connect.sid");
+    res.json("")
   });
 
 
