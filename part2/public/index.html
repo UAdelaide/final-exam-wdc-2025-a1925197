@@ -84,7 +84,11 @@
           const response = await fetch("/api/dogs");
           const data = await response.json();
 
-          const dogImageData = await data.map(a)
+          const dogImageData = await data.map(async (dog) => {
+
+          });
+
+          this.allDogs = dogImageData;
 
 
         },
