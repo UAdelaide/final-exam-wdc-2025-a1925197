@@ -26,10 +26,8 @@ let db;
     });
 
     // Replace the database
-    await connection.execute(`
-DROP DATABASE IF EXISTS DogWalkService;
-CREATE DATABASE DogWalkService;
-`);
+    await connection.execute(`DROP DATABASE IF EXISTS DogWalkService;`);
+`CREATE DATABASE DogWalkService;`);
 
     // Now connect to the created database
     db = await mysql.createConnection({
