@@ -97,9 +97,10 @@
             method: 'POST'
           });
 
-
-          document.location.href = '/';
-
+          if(res.ok)
+          {
+            document.location.href = '/';
+          }
         }
 
         async function submitWalkRequest() {
