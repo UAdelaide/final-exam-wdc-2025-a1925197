@@ -118,6 +118,9 @@
 
           if (!res.ok) throw new Error(result.error || 'Error loading user dogs data');
 
+          console.log(dogs);
+
+          this.dogs = result;
 
         }
 
