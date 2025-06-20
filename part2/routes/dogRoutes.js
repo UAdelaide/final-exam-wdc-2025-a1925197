@@ -18,8 +18,6 @@ SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.o
 
 router.get('/api/mydogs', authenticate, async function(req, res, next) {
 
-    if()
-
    try {
     const [dogs] = await db.execute(`
 SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id WHERE Users.user_id = ?;
