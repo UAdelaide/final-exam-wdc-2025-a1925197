@@ -197,7 +197,7 @@ SELECT Users.username AS walker_username,
         `);
     res.json(requests);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch open requests' });
+    res.status(500).json({ error: 'Failed to fetch walkers summary' });
   }
 });
 
