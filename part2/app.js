@@ -12,6 +12,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Storing a login in a session
 app.use(session({
     secret: "SuperSecretStringThatNoOneWillGuess",
+    resave: false,
+    save
 
     // A https only cookie for logins that lasts an hour
     cookie: {
