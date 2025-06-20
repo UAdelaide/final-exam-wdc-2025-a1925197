@@ -84,7 +84,11 @@
           const response = await fetch("/api/dogs");
           const data = await response.json();
           this.allDogs = data;
-          console.log(this.allDogs);
+
+          array.forEach(element => {
+            
+          });
+
         },
 
         async login() {
