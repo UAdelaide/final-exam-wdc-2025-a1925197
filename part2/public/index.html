@@ -87,8 +87,15 @@
         },
 
         async getDogImage() {
-          
-          return
+            const response = await fetch("https://dog.ceo/api/breeds/image/random");
+
+            if(response.ok)
+            {
+                data = await response.json();
+
+                return data.message;
+            }
+          return ""
         },
 
         async login() {
