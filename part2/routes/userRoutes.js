@@ -57,6 +57,9 @@ router.post('/login', async (req, res) => {
     return res.status(401).json({ error: 'Username and password requred' });
   }
 
+  usernameTrimmed = username.trim();
+  passwordTrimmed = pass
+
   try {
     const [rows] = await db.query(`
       SELECT user_id, role FROM Users
