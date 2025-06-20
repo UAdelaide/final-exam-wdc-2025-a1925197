@@ -60,6 +60,8 @@
       methods: {
         async login() {
 
+          console.log(this.username + " " + this.password);
+
           try {
           const response = await fetch("/api/users/login", {
             method: "POST",
