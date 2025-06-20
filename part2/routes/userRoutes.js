@@ -1,5 +1,7 @@
 const express = require('express');
+const session = express.session()
 const router = express.Router();
+
 const db = require('../models/db');
 
 // GET all users (for admin/testing)
