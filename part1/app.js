@@ -171,8 +171,28 @@ WHERE WalkRequests.status = 'open';
   }
 });
 
+/* format
+
+[
+  {
+    "walker_username": "bobwalker",
+    "total_ratings": 2,
+    "average_rating": 4.5,
+    "completed_walks": 2
+  },
+  {
+    "walker_username": "newwalker",
+    "total_ratings": 0,
+    "average_rating": null,
+    "completed_walks": 0
+  }
+]
+  
+*/
+
+
 app.get('/api/walkers/summary', function(req, res, next) {
-  res.send('respond with a resource');
+
 });
 
 
