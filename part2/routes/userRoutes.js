@@ -96,7 +96,7 @@ router.get("logout", authenticate, async (req, res) => {
 
     }
 
-    
+    res.clearCookie()
   });
 
 
