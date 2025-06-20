@@ -101,7 +101,7 @@ router.get("logout", authenticate, async (req, res) => {
 
     // The default name of the cookie created by express-session
     res.clearCookie("connect.sid");
-    res.json("")
+    return res.json({ message: "Log out successful" });
   });
 
 
