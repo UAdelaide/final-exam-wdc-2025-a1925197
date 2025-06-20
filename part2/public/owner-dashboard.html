@@ -92,16 +92,15 @@
         }
 
         async function logout() {
-
           // send a post request to the logout api
-            const res = await fetch('/api/users/logout', {
-              method: 'POST'
-            });
+          const res = await fetch('/api/users/logout', {
+            method: 'POST'
+          });
 
-            if(res.ok)
-            {
-              window.
-            }
+          if(res.ok)
+          {
+            document.location.href = '/';
+          }
         }
 
         async function submitWalkRequest() {
