@@ -142,7 +142,7 @@ await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (5
 await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (6, 2);`);
 await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (7, 2);`);
 
-await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (8, 2);`);
+await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (8, 5);`);
 
 
 
