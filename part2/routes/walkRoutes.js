@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 const { authenticate } = require('./userRoutes');
 
-// GET all walk requests (for walkers to view, if )
+// GET all walk requests (for walkers to view, if an owner then only fetch dogs they own)
 router.get('/', authenticate, async (req, res) => {
 
   if(req.session.user.role === 'owner') {
@@ -14,7 +14,7 @@ router.get('/', authenticate, async (req, res) => {
         FROM WalkRequests wr
         JOIN Dogs d ON wr.dog_id = d.dog_id
         JOIN Users u ON d.owner_id = u.user_id
-        WHERE wr.status = 'open'
+        WHERE wr.status = 'open' AND 
       `);
       res.json(rows);
     } catch (error) {
