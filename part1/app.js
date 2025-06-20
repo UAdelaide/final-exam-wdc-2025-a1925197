@@ -153,15 +153,15 @@ SELECT Dogs.dog_name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Do
         `);
     res.json(dogs);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    res.status(500).json({ error: 'Failed to fetch dogs', err });
   }
 });
 
-app.get('/walkrequests/open', function(req, res, next) {
+app.get('/api/walkrequests/open', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-app.get('/walkers/summary', function(req, res, next) {
+app.get('/api/walkers/summary', function(req, res, next) {
   res.send('respond with a resource');
 });
 
