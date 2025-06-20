@@ -6,7 +6,7 @@ const { authenticate } = require('./userRoutes');
 // GET all walk requests (for walkers to view)
 router.get('/', authenticate, async (req, res) => {
 
-  if()
+  if(req.session.user.)
 
   try {
     const [rows] = await db.query(`
