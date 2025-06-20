@@ -58,8 +58,10 @@
       },
 
       methods: {
-        login() {
-          const response = await fetch()
+        async login() {
+          const response = await fetch("/api/users/login", {
+
+          });
         }
       }
     }).mount('#app');
