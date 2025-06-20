@@ -60,9 +60,10 @@
       methods: {
         async login() {
 
-          console.log(this.username + " " + this.password);
+
 
           try {
+            // Send a post request to the login api 
           const response = await fetch("/api/users/login", {
             method: "POST",
             headers: {
@@ -79,8 +80,6 @@
             if(response.ok)
             {
               let data = await response.json();
-
-              console.log(data);
 
               //redirect based on returned user role
               if(data.user.role === "owner") {
