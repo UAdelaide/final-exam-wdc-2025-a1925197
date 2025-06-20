@@ -7,7 +7,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", async function () {
 
-            console.log("A");
             const dogPic = document.getElementById("dogImage");
 
             const response = await fetch("https://dog.ceo/api/breeds/image/random");
@@ -15,8 +14,6 @@
             if(response.ok)
             {
                 data = await response.json();
-
-                console.log("AAA");
 
                 dogPic.src = data.message;
             }
