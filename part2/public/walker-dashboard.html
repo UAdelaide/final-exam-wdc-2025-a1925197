@@ -79,7 +79,7 @@
               const data = await res.json();
 
               this.user = data.id;
-
+              console.log("Set user id, id is now " + this.user);
             }
 
           } catch(error) {
