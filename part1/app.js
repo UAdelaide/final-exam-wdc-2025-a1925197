@@ -198,6 +198,9 @@ COUNT(WalkRatings.rating_id) AS total_ratings,
 AVG(WalkRatings.rating) AS average_rating,
 SUM() AS completed_walks
 
+FROM Users
+
+WHERE Users.role = 
         `);
     res.json(requests);
   } catch (err) {
