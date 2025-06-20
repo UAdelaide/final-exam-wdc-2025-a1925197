@@ -27,8 +27,9 @@ let db;
     });
 
     // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
-    await connection.end();
+    await connection.execute(`
+
+        `)
 
     // Now connect to the created database
     db = await mysql.createConnection({
@@ -40,8 +41,6 @@ let db;
 
     // From dogwalks.sql, creating the data
     await db.execute(`
-DROP DATABASE IF EXISTS DogWalkService;
-CREATE DATABASE DogWalkService;
 USE DogWalkService;
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
