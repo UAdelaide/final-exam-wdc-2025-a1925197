@@ -143,9 +143,9 @@
           }
         }
 
-        onMounted(() => {
+        onMounted(async () => {
           loadWalks();
-          loadDogs();
+          this.dogs = await loadDogs();
         });
 
         return {
