@@ -204,11 +204,12 @@ COUNT(WalkRequests.request_id) AS completed_walks
 
 FROM Users
 
-WHERE Users.role = 'walker'
-
 LEFT JOIN WalkApplications ON Users.user_id = WalkApplications.walker_id
 LEFT JOIN WalkRequests ON WalkApplications.request_id = WalkRequests.request_id AND WalkRequests.status = 'completed'
-LEFT JOIN WalkRatings ON WalkRatings.walker_id = WalkApplications.walker_id;
+LEFT JOIN WalkRatings ON WalkRatings.walker_id = WalkApplications.walker_id
+
+
+WHERE Users.role = 'walker';
         `);
     res.json(requests);
   } catch (err) {
