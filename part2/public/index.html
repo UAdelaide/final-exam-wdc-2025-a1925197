@@ -48,7 +48,7 @@
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dog.owner_id }}</td>
-        <td><img :src="{}"></td>
+        <td><img :src="{{dog.image_url}}"></td>
       </tr>
       </tbody>
     </table>
@@ -84,6 +84,8 @@
           const response = await fetch("/api/dogs");
           const data = await response.json();
           this.allDogs = data;
+
+          
         },
 
         async getDogImage() {
