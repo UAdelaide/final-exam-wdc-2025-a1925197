@@ -151,9 +151,9 @@ app.get('/dogs', async function(req, res, next) {
     const [dogs] = await db.execute(`
 SELECT Dogs.dog_name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id
         `);
-    res.json(books);
+    res.json(dogs);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
 
