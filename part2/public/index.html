@@ -60,7 +60,11 @@
       methods: {
         async login() {
 
-          if()
+          // Ensure the username and password values are set
+          if(!username.trim() || !this.password.trim())
+          {
+            return;
+          }
 
           try {
             // Send a post request to the login api
