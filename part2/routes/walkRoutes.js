@@ -4,7 +4,7 @@ const db = require('../models/db');
 const { authenticate } = require('./userRoutes');
 
 // GET all walk requests (for walkers to view)
-router.get('/walks', async (req, res) => {
+router.get('/walks', authenticate, async (req, res) => {
   try {
     const [rows] = await db.query(`
       SELECT wr.*, d.name AS dog_name, d.size, u.username AS owner_name
