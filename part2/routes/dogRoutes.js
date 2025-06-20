@@ -7,7 +7,7 @@ const { authenticate } = require('./userRoutes');
 router.get('/', async function(req, res) {
    try {
     const [dogs] = await db.execute(`
-SELECT Dogs.dog_id, Dogs.name, Dogs.size, Users.user_id AS owner_id, FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;
+SELECT Dogs.dog_id, Dogs.name, Dogs.size, Users.user_id AS owner_id FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;
         `);
     res.json(dogs);
   } catch (err) {
