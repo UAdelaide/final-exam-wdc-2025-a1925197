@@ -37,7 +37,7 @@ CREATE DATABASE DogWalkService;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'testdb'
+      database: 'DogWalkService'
     });
 
     // From dogwalks.sql, creating the data
