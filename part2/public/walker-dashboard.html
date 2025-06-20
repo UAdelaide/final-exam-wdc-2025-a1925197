@@ -78,7 +78,7 @@
             if(res.ok) {
               const data = await res.json();
 
-              this.user = data.id;
+              this.user = data.user_id;
               console.log("Set user id, id is now " + this.user);
             }
 
