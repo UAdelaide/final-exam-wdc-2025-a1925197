@@ -4,9 +4,6 @@ const db = require('../models/db');
 const { authenticate } = require('./userRoutes');
 
 
-console.log("db object is" + db);
-
-
 router.get('/', async function(req, res) {
    try {
     const [dogs] = await db.execute(`
