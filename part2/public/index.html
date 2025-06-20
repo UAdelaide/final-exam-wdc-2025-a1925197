@@ -33,14 +33,15 @@
     <h2>All Registered Dogs</h2>
 
     <table class="table table-striped">
+      <thead>
       <tr>
-        <thead></thead>
       <th>Dog ID</th>
       <th>Name</th>
       <th>Size</th>
       <th>Owner ID</th>
       <th>Photo</th>
       </tr>
+      </thead>
       <tr v-for="dog in allDogs">
         <td>{{ dog.id }}</td>
         <td>{{ dog.name }}</td>
