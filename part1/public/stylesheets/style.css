@@ -12,4 +12,5 @@ a {
 marquee {
   background-color: blue;
   color:chocolate;
+  font-weight: bolder;
 }
