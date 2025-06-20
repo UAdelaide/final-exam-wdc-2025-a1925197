@@ -12,9 +12,12 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Storing a login in a session
 app.use(session({
     secret: "SuperSecretStringThatNoOneWillGuess",
+
+    // A https only cookie for logins that lasts an hour
     cookie: {
         httpOnly: true,
         maxAge: 1000 * 60 * 60,
+        same
     }
 }));
 
