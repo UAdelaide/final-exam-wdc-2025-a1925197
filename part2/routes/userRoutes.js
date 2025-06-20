@@ -93,7 +93,7 @@ router.get("logout", authenticate, async (req, res) => {
   // Destory the session, callback for error handling and returning
   req.session.destroy((error) => {
     if(error) {
-      return res.status
+      return res.status(500).json({ error: "Error while logging out"})
     }
 
     res.clearCookie()
