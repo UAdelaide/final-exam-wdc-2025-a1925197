@@ -22,7 +22,9 @@
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
             <label class="form-label">Select Your Dog</label>
-            <select v-model="form.dog_name" type="dropdown" class="form-control" required>
+            <select v-model="form.dog_name"class="form-control" required>
+              <option></option>
+            </select>
           </div>
           <div class="mb-3">
             <label class="form-label">Requested Date & Time</label>
