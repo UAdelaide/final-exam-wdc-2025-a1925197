@@ -4,7 +4,7 @@ const db = require('../models/db');
 const { authenticate } = require('./userRoutes');
 
 
-router.get('/', async function(req, res, next) {
+router.get('/', async function(req, res) {
    try {
     const [dogs] = await db.execute(`
 SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;
@@ -16,7 +16,7 @@ SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.o
 });
 
 
-router.get('/mydogs', authenticate, async function(req, res, next) {
+router.get('/mydogs', authenticate, async function(req, res) {
 
    try {
     const [dogs] = await db.execute(`
