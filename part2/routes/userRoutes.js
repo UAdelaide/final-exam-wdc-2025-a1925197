@@ -88,7 +88,7 @@ router.post('/login', async (req, res) => {
 });
 
 // a logout route that deletes the user's session cookie
-router.post("logout", authenticate, async (req, res) => {
+router.post("logout", authenticate, (req, res) => {
 
   // Destory the session, callback for error handling and returning
   req.session.destroy((error) => {
