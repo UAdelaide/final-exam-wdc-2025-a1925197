@@ -7,7 +7,6 @@ var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api');
 
 
 var app = express();
@@ -156,11 +155,11 @@ app.get('/dogs', async function(req, res, next) {
   }
 });
 
-router.get('/walkrequests/open', function(req, res, next) {
+app.get('/walkrequests/open', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/walkers/summary', function(req, res, next) {
+app.get('/walkers/summary', function(req, res, next) {
   res.send('respond with a resource');
 });
 
