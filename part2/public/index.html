@@ -61,15 +61,7 @@
     const { createApp } = Vue;
 
 
-    async function loadAllDogs() {
-      const response = await fetch("/api/dogs");
 
-      const data = await response.json();
-
-      this.allDogs = data;
-
-      console.log(this.allDogs);
-    }
 
     createApp({
 
@@ -83,7 +75,21 @@
         };
       },
 
+      mounted() {
+
+      },
+
       methods: {
+            async function loadAllDogs() {
+      const response = await fetch("/api/dogs");
+
+      const data = await response.json();
+
+      this.allDogs = data;
+
+      console.log(this.allDogs);
+    }
+    
         async login() {
 
           // Ensure the username and password values are set
