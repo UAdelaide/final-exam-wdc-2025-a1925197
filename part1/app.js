@@ -82,6 +82,7 @@ CREATE TABLE WalkApplications (
     CONSTRAINT unique_application UNIQUE (request_id, walker_id)
 );`);
 
+await db.execute(`
 CREATE TABLE WalkRatings (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
@@ -94,12 +95,10 @@ CREATE TABLE WalkRatings (
     FOREIGN KEY (walker_id) REFERENCES Users(user_id),
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
-);
-    `);
+);`);
 
 
-      await db.execute(`
-INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');
+      await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');`);
 
 INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 'walker');
 
