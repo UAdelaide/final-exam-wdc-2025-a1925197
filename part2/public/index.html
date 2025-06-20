@@ -82,10 +82,11 @@
 
               console.log(data);
 
+              //redirect based on returned user role
               if(data.user.role === "owner") {
                 document.location.href = "/owner-dashboard.html";
               } else {
-                //document.location.href = "/walker-dashboard.html";
+                document.location.href = "/walker-dashboard.html";
               }
             }
 
