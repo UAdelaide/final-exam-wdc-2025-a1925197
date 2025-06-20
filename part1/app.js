@@ -163,7 +163,7 @@ SELECT WalkApplications.request_id, Dogs.name AS dog_name, WalkApplications.requ
 FROM WalkApplications
 INNER JOIN Dogs ON WalkApplications.dog_id = Dogs.dog_id
 INNER JOIN Users ON Dogs.owner_id = Users.user_id
-WHERE WalkApplications.status = 'open';
+WHERE WalkRequests.status = 'open';
         `);
     res.json(requests);
   } catch (err) {
