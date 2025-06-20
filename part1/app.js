@@ -97,31 +97,31 @@ CREATE TABLE WalkRatings (
 );`);
 
 
-      
-INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');`);
 
-INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 'walker');`);
+await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');`);
 
-INSERT INTO Users (username, email, password_hash, role) VALUES ('carol123', 'carol@example.com', 'hashed789', 'owner');`);
+await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 'walker');`);
 
-INSERT INTO Users (username, email, password_hash, role) VALUES ('lachm', 'lachm@example.com', 'hashed318', 'owner');`);
+await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('carol123', 'carol@example.com', 'hashed789', 'owner');`);
 
-INSERT INTO Users (username, email, password_hash, role) VALUES ('tina', 'tk@example.com', 'hashed142', 'walker');`);
+await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('lachm', 'lachm@example.com', 'hashed318', 'owner');`);
 
-
+await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('tina', 'tk@example.com', 'hashed142', 'walker');`);
 
 
-INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium');`);
 
-INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small');`);
 
-INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'lachm'), 'Zahli', 'medium');`);
+await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium');`);
 
-INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Izzie', 'small');`);
+await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small');`);
 
-INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Giancarlo', 'small');`);
+await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'lachm'), 'Zahli', 'medium');`);
 
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00' , 30, 'Parklands');`);
+await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Izzie', 'small');`);
+
+await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Giancarlo', 'small');`);
+
+await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00' , 30, 'Parklands');`);
 
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00' , 45, 'Beachside Ave', 'accepted');`);
 
