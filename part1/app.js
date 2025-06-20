@@ -187,12 +187,22 @@ WHERE WalkRequests.status = 'open';
     "completed_walks": 0
   }
 ]
-  
 */
 
 
-app.get('/api/walkers/summary', function(req, res, next) {
-
+app.get('/api/walkers/summary', async function(req, res, next) {
+ try {
+    const [requests] = await db.execute(`
+SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, WalkRequests.location, Users.username AS owner_username
+FROM WalkRequests
+INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id
+INNER JOIN Users ON Dogs.owner_id = Users.user_id
+WHERE WalkRequests.status = 'open';
+        `);
+    res.json(requests);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch open requests' });
+  }
 });
 
 
