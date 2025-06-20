@@ -48,7 +48,7 @@
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dog.owner_id }}</td>
-        <td><img alt="" :src="getDogImage()"></td>
+        <td><img :src="getDogImage()"></td>
       </tr>
       </tbody>
     </table>
@@ -84,13 +84,9 @@
           const response = await fetch("/api/dogs");
           const data = await response.json();
           this.allDogs = data;
-
-          this.allDogs.forEach(dog => {
-            dog.image = await();
-          });
-
         },
 
+        async
         async login() {
 
           // Ensure the username and password values are set
