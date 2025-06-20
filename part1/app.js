@@ -149,7 +149,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/dogs', async function(req, res, next) {
    try {
     const [dogs] = await db.execute(`
-SELECT dog_name, 
+SELECT dog_name, size, 
         `);
     res.json(books);
   } catch (err) {
