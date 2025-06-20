@@ -39,7 +39,6 @@ let db;
 
     // From dogwalks.sql, creating the data
     await db.execute(`
-USE DogWalkService;
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -98,7 +97,8 @@ CREATE TABLE WalkRatings (
 );`);
 
 
-      await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');`);
+      await db.execute(`
+INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');
 
 INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 'walker');
 
