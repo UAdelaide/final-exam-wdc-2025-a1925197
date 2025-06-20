@@ -135,12 +135,14 @@ await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_min
 
 await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-05-14 09:00:00' , 60, 'Beachside Ave', 'completed');`);
 
+await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Zahli'), '2025-05-14 09:00:00' , 60, 'Fulham', 'completed');`);
+
 
 await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (5, 2);`);
 await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (6, 2);`);
 await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (7, 2);`);
 
-await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (7, 2);`);
+await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (8, 2);`);
 
 
 
