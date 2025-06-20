@@ -159,7 +159,7 @@ SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.o
 app.get('/api/walkrequests/open', async function(req, res, next) {
      try {
     const [requests] = await db.execute(`
-SELECT WalkApplications.request_id, Dogs.name, Dogs.size, Users.username
+SELECT WalkApplications.request_id, Dogs.name, WalkApplications.requested_time, , Users.username
 FROM WalkApplications WHERE WalkApplications.status = 'open'
 INNER JOIN Dogs ON WalkApplications.dog_id = Dogs.dog_id
 INNER JOIN Users ON Dogs.owner_id = Users.user_id;
