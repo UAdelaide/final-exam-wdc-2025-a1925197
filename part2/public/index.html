@@ -85,7 +85,7 @@
           const data = await response.json();
 
           const dogImageData = await data.map(async (dog) => {
-            const image = getDogImage();
+            const image = this.getDogImage();
             return { ... dog, image };
           });
 
