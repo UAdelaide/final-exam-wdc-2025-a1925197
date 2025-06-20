@@ -92,10 +92,10 @@
         }
 
         async function logout() {
-             const res = await fetch('/api/users/logout', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(form.value)
+
+          // send a post request
+            const res = await fetch('/api/users/logout', {
+              method: 'POST'
             });
 
             const result = await res.json();
