@@ -147,7 +147,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app..get('/dogs', async function(req, res, next) {
+app.get('/dogs', async function(req, res, next) {
    try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
