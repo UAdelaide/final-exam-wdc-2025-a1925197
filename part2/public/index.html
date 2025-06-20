@@ -66,8 +66,8 @@
           const response = await fetch("/api/users/login", {
             method: "POST",
             headers: {
-              'Co'
-            }
+              'Content-Type': 'application/json'
+            },
             body: JSON.stringify(
             {
               username: this.username,
