@@ -109,9 +109,10 @@
         {
           const res = await fetch('/api/dogs/mydogs', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(form.value)
+            headers: { 'Content-Type': 'application/json' }
           });
+
+          
         }
 
         async function submitWalkRequest() {
