@@ -6,7 +6,10 @@ const { authenticate } = require('./userRoutes');
 // GET all walk requests (for walkers to view)
 router.get('/', authenticate, async (req, res) => {
 
-  if(req.session.user.)
+  if(req.session.user.role === 'owner') {
+
+  } else
+  {
 
   try {
     const [rows] = await db.query(`
