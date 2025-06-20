@@ -96,7 +96,8 @@ router.get("logout", authenticate, async (req, res) => {
       return res.status(500).json({ error: "Error while logging out" });
     }
 
-    res.clearCookie()
+    // The default name of the 
+    res.clearCookie("connect.sid");
   });
 
 
