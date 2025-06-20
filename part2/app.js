@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
     secret: "SuperSecretStringThatNoOneWillGuess",
     resave: false,
-    save
+    saveUninitialized: false,
 
     // A https only cookie for logins that lasts an hour
     cookie: {
