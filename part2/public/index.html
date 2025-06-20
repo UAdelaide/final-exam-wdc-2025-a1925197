@@ -86,7 +86,7 @@
 
           // get all of the dog image urls and put it in the data object
           const dogImageData = await Promise.all(data.map(async (dog) => {
-            const image = this.getDogImage();
+            const image = await this.getDogImage();
             return { ... dog, image };
           }));
 
