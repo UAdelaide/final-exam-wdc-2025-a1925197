@@ -4,6 +4,7 @@ const db = require('../models/db');
 const { authenticate } = require('./userRoutes');
 
 
+
 router.get('/', async function(req, res) {
    try {
     const [dogs] = await db.execute(`
@@ -20,7 +21,7 @@ router.get('/mydogs', authenticate, async function(req, res) {
 
    try {
     const [dogs] = await db.execute(`
-SELECT * FROM Dogs;
+SELECT Dogs.dog_id, Dogs.name, Dogs.size, Users.user_id AS owner_id FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id WHERE;
 `);
     res.json(dogs);
   } catch (err) {
