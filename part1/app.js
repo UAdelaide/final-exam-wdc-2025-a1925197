@@ -196,14 +196,14 @@ app.get('/api/walkers/summary', async function(req, res, next) {
 SELECT Users.username AS walker_username,
 COUNT(WalkRatings.rating_id) AS total_ratings,
 AVG(WalkRatings.rating) AS average_rating,
-SUM() AS completed_walks
+SUM(WalkRequests) AS completed_walks
 
 FROM Users
 
 WHERE Users.role = 'walker'
 
 LEFT JOIN WalkApplications ON Users.user_id = WalkApplications.walker_id
-LEFT JOIN Walk
+LEFT JOIN WalkRequests ON WalkApplications.walker_id =
         `);
     res.json(requests);
   } catch (err) {
