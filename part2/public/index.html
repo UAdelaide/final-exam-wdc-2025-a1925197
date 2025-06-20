@@ -70,22 +70,24 @@
             }
           )});
 
+
+            if(response.ok)
+            {
+              let data = await response.JSON();
+
+              console.log(data);
+
+              if(data.user.role === 'owner') {
+                document.location.href = "/owner-dashboard";
+              } else {
+                document.location.href = "/walker-dashboard";
+              }
+            }
+
           } catch(error) {
             console.error(error.message);
           }
 
-          if(response.ok)
-          {
-            let data = await response.JSON();
-
-            console.log(data);
-
-            if(data.user.role === 'owner') {
-              document.location.href = "/owner-dashboard";
-            } else {
-              document.location.href = "/walker-dashboard";
-            }
-          }
         }
       }
     }).mount('#app');
