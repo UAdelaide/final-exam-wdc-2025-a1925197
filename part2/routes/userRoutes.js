@@ -52,7 +52,10 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-  if(!username.trim())
+  if(!username.trim() || !password.trim())
+  {
+    return res.status("")
+  }
 
   try {
     const [rows] = await db.query(`
