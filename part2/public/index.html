@@ -53,7 +53,9 @@
     async function loadAllDogs() {
       const response = await fetch("/api/dogs");
 
-      console.log(response);
+      const data = await response.json();
+
+      console.log(data);
     }
 
     createApp({
