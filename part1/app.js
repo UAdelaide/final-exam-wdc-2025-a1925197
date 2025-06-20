@@ -202,7 +202,7 @@ FROM Users
 
 WHERE Users.role = 'walker'
 
-LEFT JOIN 
+LEFT JOIN WalkApplications 
         `);
     res.json(requests);
   } catch (err) {
