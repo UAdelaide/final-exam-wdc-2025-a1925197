@@ -29,7 +29,10 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// middleware for authenticating the 
+function authenticate(req, res, next) {
 
+}
 
 router.get('/me', (req, res) => {
   if (!req.session.user) {
