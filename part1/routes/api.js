@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var db = require()
+var db = require('../app');
+
 
 router.get('/dogs', async function(req, res, next) {
    try {
