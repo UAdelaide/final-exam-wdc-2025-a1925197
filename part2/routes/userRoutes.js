@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../models/db');
-const { useSyncExternalStore } = require('react');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
