@@ -92,7 +92,11 @@ router.get("logout", authenticate, async (req, res) => {
 
   // Destory the session, callback for error handling and returning
   req.session.destroy((error) => {
+    if(error) {
 
+    }
+
+    
   });
 
 
