@@ -92,8 +92,13 @@
         }
 
         async function logout() {
+             const res = await fetch('/api/users/logout', {
               method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(form.value)
             });
+
+            const result = await res.json();
         }
 
         async function submitWalkRequest() {
