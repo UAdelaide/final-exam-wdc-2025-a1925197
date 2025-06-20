@@ -203,7 +203,8 @@ FROM Users
 WHERE Users.role = 'walker'
 
 LEFT JOIN WalkApplications ON Users.user_id = WalkApplications.walker_id
-LEFT JOIN WalkRequests ON WalkApplications.request_id = WalkRequests.request_id AND WalkRequests.status = 'completed' AND 
+LEFT JOIN WalkRequests ON WalkApplications.request_id = WalkRequests.request_id AND WalkRequests.status = 'completed'
+LEFT JOIN WalkRatings ON 
         `);
     res.json(requests);
   } catch (err) {
