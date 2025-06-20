@@ -87,15 +87,15 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// a logout route
 router.get("logout", async (req, res) => {
-  if(!req.user)
-  {
-    return;
+  if(!req.user) {
+    return res.status(201);
   }
 
 
-  
-})
+
+});
 
 module.exports = router;
 module.exports.authenticate = authenticate;
