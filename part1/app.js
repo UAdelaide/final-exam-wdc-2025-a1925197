@@ -141,6 +141,8 @@ await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (6
 
 
 await db.execute(`INSERT INTO WalkRatings (request_id, owner_id, walker_id, rating) VALUES (5, 3, 2, 3);`);
+await db.execute(`INSERT INTO WalkRatings (request_id, owner_id, walker_id, rating) VALUES (6, 3, 2, 5);`);
+
 
 
   } catch (err) {
