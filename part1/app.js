@@ -135,7 +135,7 @@ await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_min
 
 
 
-await db.execute(`INSERT INTO WalkRatings (request_id, owner_id, walker_id, rating) VALUES (4, 0, 3);`);
+await db.execute(`INSERT INTO WalkRatings (request_id, owner_id, walker_id, rating) VALUES (4, 2, 1, 3);`);
 
 
   } catch (err) {
