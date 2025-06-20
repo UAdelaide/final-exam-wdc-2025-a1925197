@@ -200,7 +200,9 @@ SUM() AS completed_walks
 
 FROM Users
 
-WHERE Users.role = 
+WHERE Users.role = 'walker'
+
+LEFT JOIN 
         `);
     res.json(requests);
   } catch (err) {
