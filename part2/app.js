@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Storing a login in a session
 app.use(session({
-    secret: ""
+    secret: "lalala"
 }));
 
 // Routes
