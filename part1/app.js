@@ -153,7 +153,7 @@ SELECT Dogs.dog_name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Do
         `);
     res.json(dogs);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch dogs', err });
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
 
