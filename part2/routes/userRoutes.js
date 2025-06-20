@@ -31,6 +31,11 @@ router.post('/register', async (req, res) => {
 
 // middleware for authenticating the user cookie session thing
 function authenticate(req, res, next) {
+  if(req.session.user)
+  {
+    next();
+  }
+
   
 }
 
