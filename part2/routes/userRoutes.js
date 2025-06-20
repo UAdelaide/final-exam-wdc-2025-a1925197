@@ -57,16 +57,16 @@ router.post('/login', async (req, res) => {
     return res.status(401).json({ error: 'Username and password requred' });
   }
 
-  let usernameTrimmed = username.trim();
-  let passwordTrimmed = password.trim();
+  const usernameTrimmed = username.trim();
+  const passwordTrimmed = password.trim();
 
   try {
     const [rows] = await db.query(`
       SELECT user_id, role FROM Users
       WHERE username = ? AND password_hash = ?;
-    `, [username, password]);
+    `, [usernameTrimmed, passwordTrimmed]);
 
-    console.log("trying login with " + username + " and pass " + password);
+    console.log("trying login with " + usernameTrimmed + " and pass " + passwordTrimmed);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
 
     req.session.user = {
       id: user.id,
-      username: username,
+      username: usernameTrimmed,
       role: user.role
     };
 
