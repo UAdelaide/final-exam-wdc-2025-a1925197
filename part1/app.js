@@ -161,7 +161,7 @@ app.get('/api/walkrequests/open', async function(req, res, next) {
     const [requests] = await db.execute(`
 SELECT WalkApplications.request_id, Dogs.name, Dogs.size, Users.username
 FROM WalkApplications
-INNER JOIN Dogs ON WalkApplications.dog_id = Dogs.user_id;
+INNER JOIN Dogs ON WalkApplications.dog_id = Dogs.dog_id
 INNER JOIN Users ON Dogs.owner_id = Users.user_id;
         `);
     res.json(requests);
