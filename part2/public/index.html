@@ -43,7 +43,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr v-for="dog in allDogs">
+      <tr v-for="dog in allDogs" :key="dog.dog_id">
         <td>{{ dog.dog_id }}</td>
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
