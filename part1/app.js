@@ -203,6 +203,7 @@ FROM Users
 WHERE Users.role = 'walker'
 
 LEFT JOIN WalkApplications ON Users.user_id = WalkApplications.walker_id
+
         `);
     res.json(requests);
   } catch (err) {
