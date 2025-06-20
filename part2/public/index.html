@@ -78,7 +78,9 @@
           {
             let data = await response.JSON();
 
-            if(data.user. === 'owner') {
+            console.log(data);
+
+            if(data.user.role === 'owner') {
               document.location.href = "/owner-dashboard";
             } else {
               document.location.href = "/walker-dashboard";
