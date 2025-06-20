@@ -80,16 +80,13 @@
       },
 
       methods: {
-            async function loadAllDogs() {
-      const response = await fetch("/api/dogs");
+        async loadAllDogs() {
+          const response = await fetch("/api/dogs");
+          const data = await response.json();
+          this.allDogs = data;
+          console.log(this.allDogs);
+        },
 
-      const data = await response.json();
-
-      this.allDogs = data;
-
-      console.log(this.allDogs);
-    }
-    
         async login() {
 
           // Ensure the username and password values are set
