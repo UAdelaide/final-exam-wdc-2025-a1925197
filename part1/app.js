@@ -210,7 +210,7 @@ LEFT JOIN WalkRatings ON WalkRatings.walker_id = WalkApplications.walker_id
 
 
 WHERE Users.role = 'walker'
-GROUP BY User.user
+GROUP BY User.user_id;
         `);
     res.json(requests);
   } catch (err) {
