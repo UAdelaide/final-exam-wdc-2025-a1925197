@@ -1,5 +1,5 @@
 const express = require('express');
-const session = express.session()
+const session = require('express-session');
 const router = express.Router();
 
 const db = require('../models/db');
