@@ -20,7 +20,7 @@ router.get('/mydogs', authenticate, async function(req, res) {
 
    try {
     const [dogs] = await db.execute(`
-SELECT Dogs.name, Dogs.size, Users.user_id FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id WHERE Users.user_id = ?;
+SELECT Dogs.name, Dogs.size, Users.user_id AS owner_id, FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id WHERE Users.user_id = ?;
         `, [req.session.user.id]);
     res.json(dogs);
   } catch (err) {
