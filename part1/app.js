@@ -123,13 +123,13 @@ await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_i
 
 await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00' , 30, 'Parklands');`);
 
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00' , 45, 'Beachside Ave', 'accepted');`);
+await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00' , 45, 'Beachside Ave', 'accepted');`);
 
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Giancarlo'), '2025-06-11 09:00:00' , 30, 'Fulham');`);
+await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Giancarlo'), '2025-06-11 09:00:00' , 30, 'Fulham');`);
 
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Zahli'), '2025-06-20 11:00:00' , 30, 'Grange', 'accepted');`);
+await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Zahli'), '2025-06-20 11:00:00' , 30, 'Grange', 'accepted');`);
 
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-05-20 09:00:00' , 60, 'Beachside Ave', 'completed');`);
+await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-05-20 09:00:00' , 60, 'Beachside Ave', 'completed');`);
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
