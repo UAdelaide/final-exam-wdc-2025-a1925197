@@ -18,11 +18,9 @@ SELECT Dogs.dog_id, Dogs.name, Dogs.size, Users.user_id AS owner_id FROM Dogs IN
 
 router.get('/mydogs', authenticate, async function(req, res) {
 
-  console.log(req.session.user.id);
-
    try {
     const [dogs] = await db.execute(`
-SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id WHERE Dogs.owner_id = 4;
+SELECT * FROM Dogs;
 `);
     res.json(dogs);
   } catch (err) {
