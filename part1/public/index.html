@@ -6,9 +6,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", async function () {
+
+            console.log("A");
             const dogPic = document.getElementById("dogImage");
 
-            const response = fetch("https://dog.ceo/api/breeds/image/random");
+            const response = await fetch("https://dog.ceo/api/breeds/image/random");
 
             if(response.ok)
             {
