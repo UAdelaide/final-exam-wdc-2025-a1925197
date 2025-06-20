@@ -156,8 +156,15 @@ SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.o
   }
 });
 
-app.get('/api/walkrequests/open', function(req, res, next) {
-  res.send('respond with a resource');
+app.get('/api/walkrequests/open', async function(req, res, next) {
+     try {
+    const [requests] = await db.execute(`
+SELECT Dogs.name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;
+        `);
+    res.json(requests);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
 });
 
 app.get('/api/walkers/summary', function(req, res, next) {
