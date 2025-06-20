@@ -146,7 +146,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.get('/dogs', async function(req, res, next) {
+app.get('/api/dogs', async function(req, res, next) {
    try {
     const [dogs] = await db.execute(`
 SELECT Dogs.dog_name, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id
