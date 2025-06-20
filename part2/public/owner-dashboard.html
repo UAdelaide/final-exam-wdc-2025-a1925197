@@ -114,7 +114,9 @@
 
           const result = await res.json();
 
-                     if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
+          if (!res.ok) throw new Error(result.error || 'Error loading user dogs data');
+
+          
 
         }
 
