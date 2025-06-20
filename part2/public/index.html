@@ -84,7 +84,7 @@
           const response = await fetch("/api/dogs");
           const data = await response.json();
 
-          // get all of the dog image urls
+          // get all of the dog image urls and put it in the data object
           const dogImageData = await Promise.all(data.map(async (dog) => {
             const image = this.getDogImage();
             return { ... dog, image };
