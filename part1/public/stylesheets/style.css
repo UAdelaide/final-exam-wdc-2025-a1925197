@@ -5,6 +5,10 @@ body {
   color: blueviolet;
 }
 
+h2 {
+  text-align: center;
+}
+
 a {
   color: #00B7FF;
 }
