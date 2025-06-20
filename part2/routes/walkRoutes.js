@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
-const { authenticate } = req
+const { authenticate } = require('./userRoutes');
 
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST a new walk request (from owner)
-router.post('/', async (req, res) => {
+router.post('/', authenticate, async (req, res) => {
   const { dog_id, requested_time, duration_minutes, location } = req.body;
 
   try {
