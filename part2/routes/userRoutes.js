@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../models/db');
+const { off } = require('../app');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
@@ -86,7 +87,15 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get("logout", async (req, res))
+router.get("logout", async (req, res) => {
+  if(!req.user)
+  {
+    return;
+  }
+
+
+  
+})
 
 module.exports = router;
 module.exports.authenticate = authenticate;
