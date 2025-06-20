@@ -5,10 +5,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", async function () {
             const dogPic = document.getElementById("dogImage");
 
-            dogPic.src = 
+            const response = fetch("https://dog.ceo/api/breeds/image/random");
+
+            if(response.ok)
+        {
+            data = 
+        }
+
+            dogPic.src =
         });
     </script>
 </head>
