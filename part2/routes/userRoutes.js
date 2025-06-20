@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
 
   if(!username.trim() || !password.trim())
   {
-    return res.status("")
+    return res.status(401).json({ error: 'Username and password requred' });
   }
 
   try {
