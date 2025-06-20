@@ -144,9 +144,30 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+
+app..get('/dogs', async function(req, res, next) {
+   try {
+    const [books] = await db.execute('SELECT * FROM books');
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch books' });
+  }
+});
+
+router.get('/walkrequests/open', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+router.get('/walkers/summary', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api', apiRouter);
 
 module.exports = app;
 module.exports.db = db;
