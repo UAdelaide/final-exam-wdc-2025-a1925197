@@ -76,6 +76,8 @@
             const res = await fetch('/api/users/me');
 
             if(res.ok)
+          } catch(error) {
+            console.error(error);
           }
         }
 
