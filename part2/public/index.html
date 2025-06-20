@@ -42,6 +42,8 @@
       </tr>
       <tr v-for="dog in allDogs">
         <td>{{ dog.id }}</td>
+        <td>{{ dog.name }}</td>
+
       </tr>
     </table>
 
@@ -59,6 +61,8 @@
       const data = await response.json();
 
       this.allDogs = data;
+
+      
     }
 
     createApp({
