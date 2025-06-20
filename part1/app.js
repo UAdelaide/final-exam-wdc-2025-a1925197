@@ -135,6 +135,8 @@ await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_min
 
 
 await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (5, 2);`);
+await db.execute(`INSERT INTO WalkApplications (request_id, walker_id) VALUES (6, 2);`);
+
 
 
 
