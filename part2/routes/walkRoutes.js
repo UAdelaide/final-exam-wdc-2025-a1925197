@@ -6,6 +6,7 @@ const { authenticate } = require('./userRoutes');
 // GET all walk requests (for walkers to view, if an owner then only fetch dogs they own)
 router.get('/', authenticate, async (req, res) => {
 
+  // If you are an owner, only show walks for dogs belonging to you
   if(req.session.user.role === 'owner') {
 
      try {
@@ -22,8 +23,9 @@ router.get('/', authenticate, async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch walk requests' });
     }
 
-  } else
-  {
+  } else {
+
+    // Otherwise this is a walker, we are all good to show every dog
 
     try {
       const [rows] = await db.query(`
